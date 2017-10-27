@@ -1,0 +1,25 @@
+.wp-main-container{
+  height: 100%;
+  width: 100%;
+}
+.row{
+  margin-top: 250px;
+  height: 150px;
+  // border: 2px solid white;
+  opacity: 0.7;
+  text-align: center;
+  padding-top: 55px;
+  &:hover{
+    opacity: 1;
+    background-color: black 60%;
+  }
+}
+input{
+  color: white;
+}
+.wp-input{
+  // background-color: blue;
+  width: 30%;
+  // margin-top: 250px;
+  // margin-left: 300px;
+}
