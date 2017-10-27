@@ -1,7 +1,11 @@
-<div class="wp-main-container">
-  <div class="row">
-      <input class="wp-input s6" placeholder="Website Url">
+<div class="wp-main-container" (window:keydown)="listenForKeyPress($event)">
+  <div class="wp-search-container row" *ngIf="!isVersion">
+      <input class="wp-input s6" placeholder="Website Url" [(ngModel)]="url">
       <!-- <label>Website Url: </label> -->
-    <a class="waves-effect waves-light btn s6"><i class="material-icons left">chevron_right</i>button</a>
+    <a class="waves-effect waves-light btn s6" (click)="showUrl()"><i class="material-icons left">chevron_right</i>Search</a>
+  </div>
+  <div class="wp-show-version row" *ngIf="isVersion">
+    <p class="s6">{{version}}</p>
+     <a class="btn-floating btn-large waves-effect waves-light blue s6" (click)="isVersion = false"><i class="material-icons">youtube_searched_for</i></a>
   </div>
 </div>

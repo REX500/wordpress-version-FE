@@ -2,16 +2,19 @@
   height: 100%;
   width: 100%;
 }
-.row{
+.wp-search-container{
   margin-top: 250px;
   height: 150px;
   // border: 2px solid white;
   opacity: 0.7;
   text-align: center;
   padding-top: 55px;
+  width: 65%;
+  border-radius: 7px;
   &:hover{
     opacity: 1;
-    background-color: black 60%;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
+    transition: 0.4s;
   }
 }
 input{
@@ -22,4 +25,20 @@ input{
   width: 30%;
   // margin-top: 250px;
   // margin-left: 300px;
+}
+.wp-show-version{
+  font-family: 'Arimo', sans-serif;
+  color: white;
+  font-size: 20px;
+  margin-top: 250px;
+  height: 200px;
+  text-align: center;
+  padding-top: 55px;
+  width: 65%;
+  border-radius: 7px;
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
+  p{
+    color: #c4b7a6;
+    font-weight: bold;
+  }
 }

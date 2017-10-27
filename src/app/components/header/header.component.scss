@@ -1,4 +1,4 @@
-.wd-header-container{
+.wp-header-container{
   height: 11vh;
   padding: 20px;
   background-color: #212121;
@@ -7,6 +7,13 @@
     outline: none;
     cursor: pointer;
     height: 50px;
+  }
+
+  p{
+    font-family: 'Arimo', sans-serif;
+    color: white;
+    float: left;
+    font-size: 20px;
   }
 
   a{
