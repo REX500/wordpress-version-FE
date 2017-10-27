@@ -9,6 +9,8 @@ import { Ng2Webstorage } from 'ngx-webstorage';
 import { AppComponent } from './root/app.component';
 
 import { components } from './app.components';
+import { routing } from './app.routing';
+
 
 import { StorageService } from './services/storage.service';
 import { LookupsService } from './services/lookups.service';
@@ -16,6 +18,7 @@ import { LookupsService } from './services/lookups.service';
 @NgModule({
   declarations: [components],
   imports: [
+    routing,
     BrowserModule,
     FormsModule,
     HttpModule,

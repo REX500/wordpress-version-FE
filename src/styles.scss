@@ -1,6 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 body{
-   background-image: url('assets/lion.jpg');
+   background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
+                      url('assets/lion.jpg');
    background-size: 1400px 700px;
    background-repeat: no-repeat;
 }

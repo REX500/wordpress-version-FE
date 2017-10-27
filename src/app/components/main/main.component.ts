@@ -29,25 +29,26 @@ export class MainComponent implements OnInit {
   }
 
   showUrl() {
-    toast('Searching for ' + this.url + ' version', 2000, '#c4b7a6');
-    // making a call to the backend
-    this.lookups.getVersion(this.url).subscribe(
-      (res) => {
-        // checking if wordpress false and version is null
-        console.log('This is the storage ' + this.storage.lookups);
-        if (this.storage.lookups === null) {
-          this.version = 'Not a wordpress website';
-          this.isVersion = true;
-          this.url = '';
-        } else {
-          this.version = 'Version: ' + this.storage.lookups;
-          this.isVersion = true;
-          this.url = '';
+    if (this.url !== '') {
+      toast('Searching for ' + this.url + ' version', 2000, '#c4b7a6');
+      // making a call to the backend
+      this.lookups.getVersion(this.url).subscribe(
+        (res) => {
+          // checking if version is null
+          if (this.storage.lookups === null) {
+            this.version = 'Not a wordpress website';
+            this.isVersion = true;
+            this.url = '';
+          } else {
+            this.version = 'Version: ' + this.storage.lookups;
+            this.isVersion = true;
+            this.url = '';
+          }
+        }, (err) => {
+          toast(err, 1500, 'red');
         }
-      }, (err) => {
-        toast(err, 1500, 'red');
-      }
-    );
+      );
+    }
   }
 
   // enter clicked to show url
