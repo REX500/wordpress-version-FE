@@ -54,8 +54,21 @@ export class MainComponent implements OnInit {
   // enter clicked to show url
   listenForKeyPress(event) {
     if (event.key === 'Enter' && this.url !== '') {
-      this.showUrl();
+      if (this.valWebsite(this.url)) {
+        this.showUrl();
+      } else {
+        toast('Bad url format', 2000, 'red');
+      }
     }
+  }
+
+  valWebsite(input) {
+    if (input === undefined) {
+      return false;
+    }
+    const regex = /(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/;
+
+    return regex.test(input);
   }
 
 }
