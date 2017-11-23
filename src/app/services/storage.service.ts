@@ -2,7 +2,8 @@ import { Injectable, Inject } from '@angular/core';
 import { LocalStorageService } from 'ngx-webstorage';
 
 const keys = {
-  lookups: 'lookups'
+  lookups: 'lookups',
+  token: 'token'
 };
 
 Injectable();
@@ -17,4 +18,7 @@ export class StorageService {
   // actual keys - response from backend will go into these keys
   get lookups(): any[] { return this.get(keys.lookups); }
   set lookups( lookups: any[]) {this.save(keys.lookups, lookups); }
+
+  get token(): any[] { return this.get(keys.token); }
+  set token( token: any[]) {this.save(keys.token, token); }
 }

@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { MaterializeModule } from 'angular2-materialize';
 // import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -14,6 +14,8 @@ import { routing } from './app.routing';
 
 import { StorageService } from './services/storage.service';
 import { LookupsService } from './services/lookups.service';
+import { LoginService } from './services/login.service';
+import { AuthGuard } from './services/auth.guard';
 
 @NgModule({
   declarations: [components],
@@ -23,9 +25,10 @@ import { LookupsService } from './services/lookups.service';
     FormsModule,
     HttpModule,
     MaterializeModule,
-    Ng2Webstorage
+    Ng2Webstorage,
+    ReactiveFormsModule
   ],
-  providers: [StorageService, LookupsService],
+  providers: [StorageService, LookupsService, LoginService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

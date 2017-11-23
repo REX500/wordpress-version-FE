@@ -6,8 +6,10 @@ import { MainComponent } from './components/main/main.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { LoginComponent } from './components/login/login.component';
 
+import { AuthGuard } from './services/auth.guard';
+
 const appRoutes: Routes = [
-  {path: '', component: MainComponent},
+  {path: '', component: MainComponent, canActivate: [AuthGuard]},
   {path: 'login', component: LoginComponent},
   {path: 'version', component: MainComponent}
 ];

@@ -1,3 +1,21 @@
-<p>
-  login works!
-</p>
+<div class="wp-main-container row">
+  <form [formGroup]="rForm" (ngSubmit)="login(rForm.value)">
+    <div class="input-field col s6">
+      <input id="email" type="text" [(ngModel)]="email" formControlName="email">
+      <label for="email">Email Address</label>
+      <div class="alert-div" *ngIf="!rForm.controls['email'].valid && rForm.controls['email'].touched">
+          {{emailAlert}}
+      </div>
+    </div>
+
+    <div class="input-field col s6">
+      <input id="password" type="text" [(ngModel)]="password" formControlName="password">
+      <label for="password">Password</label>
+      <div class="alert-div" *ngIf="!rForm.controls['password'].valid && rForm.controls['password'].touched">
+          {{passwordAlert}}
+      </div>
+    </div>
+
+    <button type="submit" class="waves-effect waves-light btn" value="Submit Form" [disabled]="!rForm.valid">LOGIN</button>
+  </form>
+</div>

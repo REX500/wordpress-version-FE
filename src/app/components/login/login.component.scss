@@ -1,0 +1,28 @@
+.wp-main-container{
+  height: 100% relative;
+  width: 65%;
+  margin-top: 200px;
+  margin-left: 300px;
+  // opacity: 0.7;
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
+  &:hover{
+    opacity: 1;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
+    transition: 0.4s;
+  }
+  a{
+    margin-top: 25px;
+  }
+}
+
+.input-field{
+  max-width: 300px;
+  min-width: 220px;
+  color: white;
+}
+
+.alert-div{
+  color: white;
+  font-weight: bold;
+  font-size: 15px;
+}
