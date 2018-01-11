@@ -16,9 +16,10 @@ import { StorageService } from './services/storage.service';
 import { LookupsService } from './services/lookups.service';
 import { LoginService } from './services/login.service';
 import { AuthGuard } from './services/auth.guard';
+import { UserComponent } from './user/user.component';
 
 @NgModule({
-  declarations: [components],
+  declarations: [components, UserComponent],
   imports: [
     routing,
     BrowserModule,

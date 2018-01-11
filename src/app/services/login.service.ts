@@ -27,7 +27,13 @@ export class LoginService {
     )
   }
 
-  loggedIn(): boolean{
+  // CHECKS IF THE TIMESTAMPT INSIDE OUR JWT TOKEN ISNT EXPIRED
+  loggedIn(): boolean {
     return tokenNotExpired('ng2-webstorage|token');
+  }
+
+  // localStorage IS A JS KEYWORD WHICH WILL CLEAR THE LOCAL STORAGE
+  logout(): void {
+    localStorage.clear();
   }
 }
